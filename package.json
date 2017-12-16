@@ -2,15 +2,15 @@
   "name": "b64-lite",
   "version": "0.0.1",
   "description": "",
-  "main": "cjs/node.js",
-  "browser": "cjs/browser.js",
-  "module": "mjs/browser.mjs",
+  "main": "cjs/index.js",
+  "browser": "mjs/browser.mjs",
+  "module": "mjs/node.mjs",
   "scripts": {
     "pretest": "npm run build",
     "test": "npm run test:node && npm run test:browser",
     "test:node": "node test/node.js",
     "test:browser": "karma start karma.conf.js --single-run",
-    "build": "BABEL_ENV=node babel mjs --out-dir cjs --extensions .mjs",
+    "build": "webpack --output-path cjs",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -24,14 +24,17 @@
   },
   "homepage": "https://github.com/kevlened/b64-lite#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
+    "copy-webpack-plugin": "^4.3.0",
     "jasmine": "^2.8.0",
     "jasmine-core": "^2.8.0",
     "karma": "^1.7.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.1",
     "karma-webpack": "^2.0.6",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-node-externals": "^1.6.0"
   }
 }
