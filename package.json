@@ -1,7 +1,7 @@
 {
   "name": "b64-lite",
   "amdName": "b64",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "isomorphic base64 library in 183 bytes",
   "main": "node/b64-lite.js",
   "browser": "dist/b64-lite.js",
