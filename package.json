@@ -1,18 +1,23 @@
 {
   "name": "b64-lite",
+  "amdName": "b64",
   "version": "0.0.1",
-  "description": "",
-  "main": "cjs/index.js",
-  "browser": "mjs/browser.mjs",
-  "module": "mjs/node.mjs",
+  "description": "isomorphic base64 library in 183 bytes",
+  "main": "node/b64-lite.js",
+  "browser": "dist/b64-lite.js",
+  "module": "node/b64-lite.mjs",
   "scripts": {
     "pretest": "npm run build",
     "test": "npm run test:node && npm run test:browser",
     "test:node": "node test/node.js",
     "test:browser": "karma start karma.conf.js --single-run",
-    "build": "webpack --output-path cjs",
-    "prepublish": "npm run build"
+    "build": "microbundle --entry browser.js --output dist && microbundle --entry node.js --output node --compress false",
+    "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
+  "files": [
+    "dist",
+    "node"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kevlened/b64-lite.git"
@@ -24,17 +29,13 @@
   },
   "homepage": "https://github.com/kevlened/b64-lite#readme",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "copy-webpack-plugin": "^4.3.0",
     "jasmine": "^2.8.0",
     "jasmine-core": "^2.8.0",
     "karma": "^1.7.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.1",
     "karma-webpack": "^2.0.6",
-    "webpack": "^3.10.0",
-    "webpack-node-externals": "^1.6.0"
+    "microbundle": "^0.2.4",
+    "webpack": "^3.10.0"
   }
 }

@@ -1,4 +1,4 @@
-const b64 = require('../cjs');
+const b64 = require('../');
 
 describe('b64', () => {
   it('btoa', () => expect(b64.btoa('hi there')).toBe('aGkgdGhlcmU='))

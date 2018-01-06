@@ -1,5 +1,9 @@
-export const atob = window.atob.bind(window)
-export const btoa = window.btoa.bind(window)
+export function atob(b64) {
+  return window.atob(b64) 
+}
+export function btoa(bin) {
+  return window.btoa(bin) 
+}
 export function toBase64(string) {
   return btoa(unescape(encodeURIComponent(string)))
 }
