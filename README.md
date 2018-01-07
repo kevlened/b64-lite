@@ -24,10 +24,10 @@ b64.fromBase64('aGVsbG8g5L2g5aW9');
 
 ## Can it be smaller?
 
-If you use ES6 imports with tree-shaking, yes! The caveat is you have to change how you import until [some issues get sorted out in bundlers](https://github.com/stereobooster/package.json/issues/2).
+If you use ES6 imports with a bundler that supports tree-shaking, yes!
 
 ```javascript
-import { toBase64 } from 'b64-lite/dist/b64-lite.mjs'
+import { toBase64 } from 'b64-lite'
 ```
 
 ## License
