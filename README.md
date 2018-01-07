@@ -1,6 +1,6 @@
 # b64-lite [![NPM](https://img.shields.io/npm/v/b64-lite.svg)](https://npmjs.com/package/b64-lite) [![Build](https://travis-ci.org/kevlened/b64-lite.svg?branch=master)](https://travis-ci.org/kevlened/b64-lite)
 
-isomorphic base64 library in 183 bytes
+isomorphic base64 library in 181 bytes
 
 ## Usage
 

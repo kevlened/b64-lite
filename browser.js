@@ -5,10 +5,10 @@ export function btoa(bin) {
   return window.btoa(bin) 
 }
 export function toBase64(string) {
-  return btoa(unescape(encodeURIComponent(string)))
+  return window.btoa(unescape(encodeURIComponent(string)))
 }
 export function fromBase64(b64) {
-  return decodeURIComponent(escape(atob(b64)))
+  return decodeURIComponent(escape(window.atob(b64)))
 }
 export default {
   atob,
