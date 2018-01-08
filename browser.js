@@ -10,9 +10,3 @@ export function toBase64(string) {
 export function fromBase64(b64) {
   return decodeURIComponent(escape(window.atob(b64)))
 }
-export default {
-  atob,
-  btoa,
-  toBase64,
-  fromBase64
-}
