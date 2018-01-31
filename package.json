@@ -6,15 +6,17 @@
   "main": "node/b64-lite.js",
   "module": "node/b64-lite.mjs",
   "browser": {
-    "./node/b64-lite.js": "./dist/b64-lite.js",
+    "./node/b64-lite.js": "./dist/b64-lite.main.js",
     "./node/b64-lite.mjs": "./dist/b64-lite.mjs"
   },
   "scripts": {
     "pretest": "npm run build",
-    "test": "npm run test:node && npm run test:browser",
+    "test": "npm run test:node && npm run test:browser && npm run test:rn",
     "test:node": "node test/node.js",
     "test:browser": "karma start karma.conf.js --single-run",
-    "build": "microbundle --entry browser.js --output dist && microbundle --entry node.js --output node --compress false",
+    "test:rn": "node test/react-native-sim.js",
+    "build": "microbundle --entry browser.js --output dist && microbundle --entry node.js --output node --compress false && npm run build:react-native && cp b64-lite.main.js dist/",
+    "build:react-native": "cp react-native.js dist/ && cp b64-lite.ios.js dist/ && cp b64-lite.android.js dist/",
     "release": "npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "files": [
@@ -46,5 +48,8 @@
     "karma-webpack": "^2.0.6",
     "microbundle": "^0.2.4",
     "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "base-64": "^0.1.0"
   }
 }
