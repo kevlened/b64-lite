@@ -4,7 +4,7 @@ export function atob(base64) {
 export function btoa(byteString) {
   for (let byte of byteString) {
     if (String.prototype.charCodeAt.call(byte, 0) > 255) {
-      throw `Failed to execute 'btoa': The string to be encoded contains characters outside of the Latin1 range.`
+      throw new Error(`Failed to execute 'btoa': The string to be encoded contains characters outside of the Latin1 range.`)
     }
   }
   return Buffer.from(byteString, 'binary').toString('base64')

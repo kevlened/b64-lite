@@ -1,6 +1,6 @@
 # b64-lite [![NPM](https://img.shields.io/npm/v/b64-lite.svg)](https://npmjs.com/package/b64-lite) [![Build](https://travis-ci.org/kevlened/b64-lite.svg?branch=master)](https://travis-ci.org/kevlened/b64-lite)
 
-isomorphic base64 library in 152 bytes
+Node, browser (152 bytes), and React Native base64 library
 
 ## Usage
 
@@ -15,9 +15,11 @@ b64.atob('aGkgdGhlcmU=');
 b64.btoa('hi there');
 // aGkgdGhlcmU=
 
+// convert unicode to b64
 b64.toBase64('hello 你好');
 // aGVsbG8g5L2g5aW9
 
+// decode b64 to unicode
 b64.fromBase64('aGVsbG8g5L2g5aW9');
 // hello 你好
 ```
