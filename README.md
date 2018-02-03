@@ -1,6 +1,6 @@
 # b64-lite [![NPM](https://img.shields.io/npm/v/b64-lite.svg)](https://npmjs.com/package/b64-lite) [![Build](https://travis-ci.org/kevlened/b64-lite.svg?branch=master)](https://travis-ci.org/kevlened/b64-lite)
 
-isomorphic base64 library in 152 bytes
+Node, React Native, and browser (86 bytes) base64 library
 
 ## Usage
 
@@ -14,12 +14,6 @@ b64.atob('aGkgdGhlcmU=');
 // byte string to Base64 in ASCII
 b64.btoa('hi there');
 // aGkgdGhlcmU=
-
-b64.toBase64('hello 你好');
-// aGVsbG8g5L2g5aW9
-
-b64.fromBase64('aGVsbG8g5L2g5aW9');
-// hello 你好
 ```
 
 ## Can it be smaller?
@@ -27,7 +21,7 @@ b64.fromBase64('aGVsbG8g5L2g5aW9');
 If you use ES6 imports with a bundler that supports tree-shaking, yes!
 
 ```javascript
-import { toBase64 } from 'b64-lite'
+import { atob } from 'b64-lite'
 ```
 
 ## License
