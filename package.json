@@ -40,14 +40,14 @@
   },
   "homepage": "https://github.com/kevlened/b64-lite#readme",
   "devDependencies": {
-    "jasmine": "^2.8.0",
-    "jasmine-core": "^2.8.0",
-    "karma": "^1.7.1",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-jasmine": "^1.1.1",
-    "karma-webpack": "^2.0.6",
-    "microbundle": "^0.2.4",
-    "webpack": "^3.10.0"
+    "jasmine": "^3.4.0",
+    "jasmine-core": "^3.4.0",
+    "karma": "^4.3.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-jasmine": "^2.0.1",
+    "karma-webpack": "^4.0.2",
+    "microbundle": "^0.11.0",
+    "webpack": "^4.40.2"
   },
   "dependencies": {
     "base-64": "^0.1.0"

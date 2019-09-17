@@ -9,9 +9,12 @@ export function btoa(byteString) {
   }
   return Buffer.from(byteString, 'binary').toString('base64')
 }
-export function toBase64(string) {
-  return btoa(unescape(encodeURIComponent(string)))
+export function toBase64(input) {
+  return Buffer.from(input).toString('base64')
 }
 export function fromBase64(b64) {
-  return decodeURIComponent(escape(atob(b64)))
+  return Buffer.from(b64, 'base64').toString()
+}
+export function toBuffer(b64) {
+  return new Uint8Array(Buffer.from(b64, 'base64'))
 }
